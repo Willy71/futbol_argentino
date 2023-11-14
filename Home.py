@@ -51,8 +51,6 @@ def centrar_texto(texto, tamanho, color):
                 unsafe_allow_html=True)
 
 
-df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv", index_col=0)
-
 centrar_imagen("https://i.postimg.cc/qvb4nYF8/Logo-lpf-afa.png", 100)
 
 
