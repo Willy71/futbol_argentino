@@ -8,6 +8,8 @@ st.set_page_config(
     layout="wide"
 )
 
+df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv", index_col=0)
+
 df_data = st.session_state["data"]
 
 # Compruebe si la 'key' ya existe en session_state
@@ -59,8 +61,6 @@ def centrar_texto(texto, tamanho, color):
     st.markdown(f"<h{tamanho} style='text-align: center; color: {color}'>{texto}</h{tamanho}>",
                 unsafe_allow_html=True)
 
-
-df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv", index_col=0)
 
 # feature_1 filters
 df_1 = df_data["Equipo"].unique()
