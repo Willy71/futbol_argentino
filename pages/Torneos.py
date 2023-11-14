@@ -61,24 +61,24 @@ def centrar_texto(texto, tamanho, color):
 df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv", index_col=0)
 
 # feature_1 filters
-df_1 = df_data["Año"].unique()
+df_1 = df["Año"].unique()
 slb_1 = st.sidebar.selectbox('Año', df_1)
 # filter out data
-df_data = df_data[(df_data["Año"] == slb_1)]
+df = df[(df["Año"] == slb_1)]
 
 # feature_2 filters
-df_2 = df_data["Campeonato"].unique()
+df_2 = df["Campeonato"].unique()
 slb_2 = st.sidebar.selectbox('Campeonato', df_2)
 # filter out data
-df_data = df_data[(df_data["Campeonato"] == slb_2)]
+df = df[(df["Campeonato"] == slb_2)]
 
 # feature_3 filters
-df_3 = df_data["Equipo"].unique()
+df_3 = df["Equipo"].unique()
 slb_3 = st.sidebar.selectbox('Equipo', df_3)
 # filter out data
-df_data = df_data[(df_data["Equipo"] == slb_3)]
+df = df[(df["Equipo"] == slb_3)]
 
-torneo_df = df_data[df_data["Equipo"] == slb_3].iloc[0]
+torneo_df = df[df["Equipo"] == slb_3].iloc[0]
 
 centrar_texto(torneo_df['Equipo'], 4, "white")
 centrar_imagen(torneo_df['Logo'], 100)
