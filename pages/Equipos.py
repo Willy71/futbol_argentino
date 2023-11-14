@@ -10,6 +10,13 @@ st.set_page_config(
 
 df_data = pd.read_csv("futbol_argentino_logos.csv", index_col=0)
 
+df_data = st.session_state["data"]
+
+# Compruebe si la 'key' ya existe en session_state
+# Si no esta, inicialízalo.
+if 'key' not in st.session_state:
+    st.session_state['key'] = 'value'
+
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
