@@ -8,13 +8,15 @@ st.set_page_config(
     layout="wide"
 )
 
-df_data = st.session_state["data"]
+# Check if you've already initialized the data
+if 'df' not in st.session_state:
+    # Get the data if you haven't
+    df = pd.read_csv('datasets/futbol_argentino_logos.csv')
+    # Save the data to session state
+    st.session_state.df = df
 
-# Compruebe si la 'key' ya existe en session_state
-# Si no esta, inicialízalo.
-if 'key' not in st.session_state:
-    st.session_state['key'] = 'value'
-
+# Retrieve the data from session state
+df = st.session_state.df
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
