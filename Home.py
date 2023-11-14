@@ -3,8 +3,6 @@ import pandas as pd
 import webbrowser
 from datetime import datetime
 
-df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv")
-
 # Colocar nome na pagina, icone e ampliar a tela
 st.set_page_config(
     page_title="Futbol Argentino",
@@ -54,7 +52,6 @@ def centrar_texto(texto, tamanho, color):
 
 
 df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv", index_col=0)
-df_logos = pd.read_csv("datasets\_logos_equipos.csv", index_col=0)
 
 centrar_imagen("https://i.postimg.cc/qvb4nYF8/Logo-lpf-afa.png", 100)
 
