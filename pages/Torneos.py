@@ -8,13 +8,12 @@ st.set_page_config(
     layout="wide"
 )
 
-@st.cache_data
-def load_data(nrows):
-    data = pd.read_csv(df_data, nrows=nrows)
-    def lowercase(x): return str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
+df_data = st.session_state["data"]
+
+# Compruebe si la 'key' ya existe en session_state
+# Si no esta, inicialízalo.
+if 'key' not in st.session_state:
+    st.session_state['key'] = 'value'
 
 page_bg_img = f"""
 <style>
