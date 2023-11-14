@@ -9,6 +9,8 @@ st.set_page_config(
     layout="wide"
 )
 
+df_data = st.session_state["data"]
+
 # Compruebe si la 'key' ya existe en session_state
 # Si no esta, inicialízalo.
 if 'key' not in st.session_state:
