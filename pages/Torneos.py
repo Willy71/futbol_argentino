@@ -9,6 +9,8 @@ st.set_page_config(
     layout="wide"
 )
 
+df_data = pd.read_csv("futbol_argentino_logos.csv")
+
 df_data = st.session_state["data"]
 
 # Compruebe si la 'key' ya existe en session_state
