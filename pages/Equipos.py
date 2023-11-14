@@ -13,7 +13,7 @@ if 'df' not in st.session_state:
     # Get the data if you haven't
     df = pd.read_csv('datasets/futbol_argentino_logos.csv')
     # Save the data to session state
-    st.session_state.df = df_data
+    st.session_state.df = df
 
 # Retrieve the data from session state
 df = st.session_state.df
