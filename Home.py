@@ -10,7 +10,12 @@ st.set_page_config(
     layout="wide"
 )
 
-df_data = pd.read_csv("pages/futbol_argentino_logos.csv", index_col=0)
+if "data" not in st.session_state:
+    df_data = pd.read_csv("futbol_argentino_logos.csv", index_col=0)
+    df_data = df_data[df_data["Contract Valid Until"] >= datetime.today().year]
+    df_data = df_data[df_data["Value(£)"] > 0]
+    df_data = df_data.sort_values(by="Overall", ascending = False)
+    st.session_state["data"] = df_data
 
 page_bg_img = f"""
 <style>
