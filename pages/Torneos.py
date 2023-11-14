@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import pandas as pd
-from streamlit_dynamic_filters import DynamicFilters
 
 st.set_page_config(
     page_title="Campeonatos",
