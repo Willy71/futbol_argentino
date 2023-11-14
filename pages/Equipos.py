@@ -8,12 +8,15 @@ st.set_page_config(
     layout="wide"
 )
 
-df_data = st.session_state["data"]
+# Check if you've already initialized the data
+if 'df' not in st.session_state:
+    # Get the data if you haven't
+    df = pd.read_csv('datasets/futbol_argentino_logos.csv')
+    # Save the data to session state
+    st.session_state.df = df_data
 
-# Compruebe si la 'key' ya existe en session_state
-# Si no esta, inicialízalo.
-if 'key' not in st.session_state:
-    st.session_state['key'] = 'value'
+# Retrieve the data from session state
+df = st.session_state.df
 
 page_bg_img = f"""
 <style>
@@ -57,26 +60,26 @@ def centrar_texto(texto, tamanho, color):
 
 
 # feature_1 filters
-df_1 = df_data["Equipo"].unique()
+df_1 = df["Equipo"].unique()
 df_1_1 = sorted(df_1)
 slb_1 = st.sidebar.selectbox('Equipo', df_1_1)
 # filter out data
-df_data = df_data[(df_data["Equipo"] == slb_1)]
+df = df[(df["Equipo"] == slb_1)]
 
 # feature_2 filters
-df_2 = df_data["Año"].unique()
+df_2 = df["Año"].unique()
 df_2_1 = sorted(df_2)
 slb_2 = st.sidebar.selectbox('Año', df_2_1)
 # filter out data
-df_data = df_data[(df_data["Año"] == slb_2)]
+df = df[(df["Año"] == slb_2)]
 
 # feature_3 filters
-df_3 = df_data["Campeonato"].unique()
+df_3 = df["Campeonato"].unique()
 slb_3 = st.sidebar.selectbox('Campeonato', df_3)
 # filter out data
-df_data = df_data[(df_data["Campeonato"] == slb_3)]
+df = df[(df["Campeonato"] == slb_3)]
 
-torneo_df = df_data[df_data["Campeonato"] == slb_3].iloc[0]
+torneo_df = df[df["Campeonato"] == slb_3].iloc[0]
 
 centrar_texto(torneo_df['Equipo'], 4, "white")
 centrar_imagen(torneo_df['Logo'], 100)
