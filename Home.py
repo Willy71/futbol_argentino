@@ -3,9 +3,6 @@ import pandas as pd
 import webbrowser
 from datetime import datetime
 
-[theme]
-base="dark"
-
 # Colocar nome na pagina, icone e ampliar a tela
 st.set_page_config(
     page_title="Futbol Argentino",
