@@ -63,7 +63,7 @@ centrar_texto("Era profesional 1931-2023", 3, "white")
 st.title("")
 
 # st.sidebar.write("PRUEBA")
-st.sidebar.centrar_texto("Pagina realizada por Guillermo Cerato", 7, "white")
+st.sidebar.markdown(f"<h7 style='text-align: center; color: white'>Pagina realizada por Guillermo Cerato</h7>", unsafe_allow_html=True)
 
 st.sidebar.markdown(
     "[Base de datos original](https://www.kaggle.com/datasets/ivanramosctes/liga-argentina-1931-2023)")
