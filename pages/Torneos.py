@@ -58,8 +58,6 @@ def centrar_texto(texto, tamanho, color):
                 unsafe_allow_html=True)
 
 
-df_data = pd.read_csv("datasets\_futbol_argentino_logos.csv", index_col=0)
-
 # feature_1 filters
 df_1 = df["Año"].unique()
 slb_1 = st.sidebar.selectbox('Año', df_1)
