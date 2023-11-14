@@ -10,6 +10,8 @@ st.set_page_config(
     layout="wide"
 )
 
+df_data = pd.read_csv("pages/futbol_argentino_logos.csv", index_col=0)
+
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
