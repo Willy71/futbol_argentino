@@ -53,7 +53,7 @@ def centrar_texto(texto, tamanho, color):
                 unsafe_allow_html=True)
 
 
-centrar_imagen("https://i.postimg.cc/qvb4nYF8/Logo-lpf-afa.png", 100)
+centrar_imagen("https://i.postimg.cc/7ZMtVBzB/Logo-lpf-afa.png", 100)
 
 
 # Título centrado en la página
