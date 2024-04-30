@@ -15,7 +15,7 @@ df_data = pd.read_csv("datasets/futbol_argentino_logos.csv", index_col=0)
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://i.postimg.cc/430MMcSq/wepik-export-20231112174143b-KKB.jpg");
+background-image: url("https://postimg.cc/4KzBHYZQ");
 background-size: 180%;
 background-position: top left;
 background-repeat: repeat;
